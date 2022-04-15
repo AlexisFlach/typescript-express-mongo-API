@@ -1,15 +1,11 @@
 import mongoose, { Schema } from 'mongoose';
 import { IArtist } from '../interfaces/IArtist';
+import { AlbumSchema } from './Album';
 
 const ArtistSchema: Schema = new Schema(
   {
     name: { type: String, required: true },
-    albums: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Album',
-      },
-    ],
+    albums: [AlbumSchema],
   },
   {
     timestamps: true,

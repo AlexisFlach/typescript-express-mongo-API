@@ -4,6 +4,11 @@ import Album from '../models/Album';
 import mongoose from 'mongoose';
 const repo = new AlbumRepository(Album);
 
+export const getAlbum = async (req: Request, res: Response) => {
+  const album = await repo.getAlbum(Number(req.params.id));
+  res.send(album);
+};
+
 export const getAllAlbums = async (req: Request, res: Response) => {
   const albums = await repo.getAlbums();
   res.status(200).send({ albums });
