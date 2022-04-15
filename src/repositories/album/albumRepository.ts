@@ -3,6 +3,7 @@ import Album from '../../models/Album';
 import { IAlbumRepository } from './IAlbumRepository';
 
 export class AlbumRepository implements IAlbumRepository {
+  
   public _db: typeof Album;
 
   constructor(db: typeof Album) {
